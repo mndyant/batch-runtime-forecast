@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 rx=%279%27 fill=%27%231e3555%27/%3E%3Ctext x=%2720%27 y=%2729%27 text-anchor=%27middle%27 fill=%27white%27 font-family=%27sans-serif%27 font-size=%2728%27%3EB%3C/text%3E%3C/svg%3E">
+  <title>バッチ完了時刻・締切予測</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+  <header class="page-header"><div class="brand-mark" aria-hidden="true">B</div><div><p class="eyebrow">システム運用 / 処理計画</p><h1>バッチ完了時刻・締切予測</h1></div><span class="local-tag">ローカル実行</span></header>
+  <main class="workspace">
+    <aside class="input-panel" aria-labelledby="input-title">
+      <div class="panel-heading"><span class="step">01</span><h2 id="input-title">入力条件</h2></div>
+      <form id="forecast-form">
+        <fieldset id="input-fields">
+          <legend class="sr-only">データと予測条件</legend>
+          <label for="sample">サンプルデータ</label>
+          <select id="sample" name="sample"><option value="weekday">曜日差</option><option value="monthend">月末集中</option><option value="trend">長期的な増減</option><option value="slowdown">処理速度低下</option><option value="burst">突発的な件数増加</option><option value="idle">低負荷・休止</option></select>
+          <button type="button" id="sample-download" class="text-button">観測CSVを保存 ↓</button>
+          <div class="file-box"><label for="file">手元の観測CSVを使用</label><input type="file" id="file" name="file" accept=".csv,text/csv"><div class="file-footer"><span id="file-name">ファイル未選択</span><button type="button" id="clear-file" class="text-button" disabled>解除</button></div></div>
+          <p class="help">UTF-8 / date,records,runtime_minutes<br>連続する150〜3,650日・2MB以内。CSV選択時はサンプルより優先します。</p>
+          <div class="form-divider"></div>
+          <label for="horizon">予測期間</label><select id="horizon" name="horizon"><option value="1">1日先</option><option value="7" selected>7日先</option><option value="30">30日先</option></select>
+          <div class="field-pair"><div><label for="start-time">予定開始時刻</label><input id="start-time" name="start_time" type="time" value="22:00" required></div><div><label for="deadline-time">締切時刻</label><input id="deadline-time" name="deadline_time" type="time" value="00:00" required></div></div>
+          <p class="help">締切が開始時刻以下の場合は翌日として計算します。同じ時刻なら24時間後です。日時は日本時間です。</p>
+          <div class="field-pair"><div><label for="buffer">安全余裕（分）</label><input id="buffer" name="buffer_minutes" type="number" min="0" max="1440" step="1" value="15" required></div><div><label for="stress">比較倍率（%）</label><input id="stress" name="stress_pct" type="number" min="1" max="500" step="1" value="120" required></div></div>
+          <button type="submit" id="run" class="primary-button">予測を実行</button>
+          <button type="button" id="reset" class="secondary-button">初期条件に戻す</button>
+        </fieldset>
+      </form>
+      <div class="scope-note"><strong>合成データで評価 / 実データ未検証</strong><p>1種類のバッチの日次計画を対象とします。祝日・複数ジョブの依存関係・連日の実行重なりや待ち行列は考慮しません。</p></div>
+    </aside>
+    <section class="result-area" aria-labelledby="result-title" aria-busy="false">
+      <div class="result-heading"><div><p class="eyebrow">02 / 予測結果</p><h2 id="result-title">締切に向けた処理計画</h2></div><div class="export-actions"><button id="export-txt" disabled>サマリ TXT</button><button id="export-csv" disabled>予測 CSV</button><button id="export-json" disabled>結果 JSON</button></div></div>
+      <p id="run-status" class="run-status" role="status" aria-live="polite">予測を準備しています。</p>
+      <div id="error" class="error-box" role="alert" hidden></div>
+      <div id="stale" class="stale-box" hidden>入力条件が変更されています。表示中の結果は変更前の条件です。予測を実行して更新してください。</div>
+      <div id="empty-state" class="empty-state">入力条件を指定して、予測を実行してください。</div>
+      <div id="results" hidden>
+        <p id="data-context" class="data-context"></p>
+        <div class="metrics"><article class="metric"><span>締切超過見込み</span><strong id="late-days">—</strong><small>予測期間内</small></article><article class="metric"><span>安全余裕不足</span><strong id="tight-days">—</strong><small>締切内でも要注意</small></article><article class="metric"><span>最小の余裕</span><strong id="min-slack">—</strong><small id="worst-date">—</small></article><article class="metric"><span>安全余裕を確保する最終着手</span><strong id="latest-start" class="datetime">—</strong><small>全予測日のうち最も厳しい日</small></article></div>
+        <section class="card summary-card" aria-labelledby="summary-title"><h3 id="summary-title">判断サマリ</h3><p id="headline"></p><dl id="summary-items"></dl><p class="help">最終着手日時 = 締切 − 予測所要時間 − 安全余裕。締切までの余裕は安全余裕を差し引く前の値です。</p></section>
+        <section class="card" aria-labelledby="forecast-title"><div class="card-heading"><div><h3 id="forecast-title">実績と今後の予測</h3><p class="help">直近の観測と、選択した期間の予測</p></div><div class="chart-controls" role="group" aria-label="予測グラフの指標"><button type="button" class="active" data-chart="forecast" data-metric="runtime" aria-pressed="true">所要時間</button><button type="button" data-chart="forecast" data-metric="records" aria-pressed="false">処理件数</button></div></div><div class="legend"><span class="legend-item observed">観測実績</span><span class="legend-item forecast">今後の予測</span><span id="deadline-legend" class="legend-item deadline">締切までの時間</span></div><div id="forecast-chart" class="chart-container"></div><p class="chart-note">未来の実績値は表示していません。点にカーソルを合わせると日付・値を確認できます。</p></section>
+        <section class="card" aria-labelledby="table-title"><div class="card-heading"><h3 id="table-title">日別の処理計画</h3><span class="small-label">日時は日付を含めて表示</span></div><div class="table-scroll" tabindex="0" aria-label="日別の処理計画表。横方向にスクロールできます"><table id="forecast-table"><thead><tr><th>対象日</th><th class="numeric">予測件数</th><th class="numeric">所要時間</th><th>予定開始</th><th>予測完了</th><th>締切</th><th class="numeric">余裕</th><th>最終着手</th><th>判定</th></tr></thead><tbody></tbody></table></div></section>
+        <section class="card" aria-labelledby="scenario-title"><h3 id="scenario-title">所要時間倍率の条件比較</h3><p class="help">同じ予測に80%・100%・指定倍率を適用した条件比較です。確率・統計的予測区間ではありません。</p><div class="table-scroll" tabindex="0" aria-label="所要時間倍率の比較表"><table id="scenario-table"><thead><tr><th>比較条件</th><th class="numeric">倍率</th><th class="numeric">締切超過</th><th class="numeric">余裕不足</th><th class="numeric">最小余裕</th><th>最終着手</th></tr></thead><tbody></tbody></table></div></section>
+        <section class="card" aria-labelledby="comparison-title"><div class="card-heading"><div><h3 id="comparison-title">過去の予測と実績の比較</h3><p id="comparison-context" class="help"></p></div><div class="chart-controls" role="group" aria-label="過去比較グラフの指標"><button type="button" class="active" data-chart="comparison" data-metric="runtime" aria-pressed="true">所要時間</button><button type="button" data-chart="comparison" data-metric="records" aria-pressed="false">処理件数</button></div></div><div class="legend"><span class="legend-item observed">実績</span><span class="legend-item forecast">当時の予測</span></div><div id="comparison-chart" class="chart-container"></div><p class="chart-note">最新の監査起点から30日間を同じ日付で比較。上の予測期間の設定とは独立しています。</p></section>
+        <details class="card evaluation-card"><summary>手法の選択・監査評価・制約</summary><p id="model-context"></p><p id="selection-rule" class="help"></p><p class="help">監査結果は過去の観測内の評価です。改善率の基準は直近4週の同曜日平均です。将来の精度を保証するものではありません。</p><div class="table-scroll" tabindex="0" aria-label="監査評価表"><table id="evaluation-table"><thead><tr><th>手法</th><th class="numeric">期間</th><th class="numeric">件数MAE</th><th class="numeric">時間MAE</th><th class="numeric">時間RMSE</th><th class="numeric">終点誤差</th><th class="numeric">基準比改善率</th><th class="numeric">起点数</th></tr></thead><tbody></tbody></table></div><ul id="limitations" class="limitations"></ul></details>
+      </div>
+    </section>
+  </main>
+  <footer>運用計画の検討用 / 合成データで評価・実データ未検証 / 追加のAPI接続なし</footer>
+</body>
+</html>

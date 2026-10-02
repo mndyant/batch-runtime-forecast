@@ -1,0 +1,26 @@
+{
+  "kind": "合成データ",
+  "scenario": "burst",
+  "seed": 106,
+  "start": "2026-01-01",
+  "days": 180,
+  "future": 30,
+  "generator_version": 1,
+  "events_index": [
+    22,
+    77,
+    90,
+    93,
+    121,
+    167,
+    196
+  ],
+  "nominal_records": 28000,
+  "records_per_minute": 400,
+  "overhead_minutes": 18,
+  "runtime_noise_std": 4,
+  "stream": [
+    106,
+    4
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "合成データ",
+  "scenario": "trend",
+  "seed": 105,
+  "start": "2026-01-01",
+  "days": 180,
+  "future": 30,
+  "generator_version": 1,
+  "events_index": [],
+  "nominal_records": 28000,
+  "records_per_minute": 400,
+  "overhead_minutes": 18,
+  "runtime_noise_std": 4,
+  "stream": [
+    105,
+    2
+  ]
+}

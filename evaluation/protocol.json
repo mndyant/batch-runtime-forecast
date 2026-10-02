@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "observations": 180,
+  "horizons": [1, 7, 30],
+  "scenarios": ["weekday", "monthend", "trend", "slowdown", "burst", "idle"],
+  "exploration_seeds": [0, 1, 2, 3, 4],
+  "final_seeds": [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119],
+  "models": ["weekday4", "mean7", "ridge"],
+  "selection": "per-case development 7-day runtime MAE; within best*1.05+0.1: weekday4,mean7,ridge",
+  "baseline": "weekday4",
+  "settings": {"horizon": 30, "start_time": "22:00", "deadline_time": "00:00", "buffer_minutes": 15, "stress_pct": 120}
+}

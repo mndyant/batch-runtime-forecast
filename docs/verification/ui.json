@@ -1,0 +1,93 @@
+{
+  "url": "http://127.0.0.1:5001",
+  "checks": [
+    {
+      "name": "Initial API forecast and desktop layout",
+      "passed": true,
+      "details": {
+        "forecast_days": 7,
+        "comparison_days": 30
+      }
+    },
+    {
+      "name": "Historical paired dates and absence of future actuals",
+      "passed": true
+    },
+    {
+      "name": "Both chart metric switches",
+      "passed": true
+    },
+    {
+      "name": "TXT, CSV and JSON downloads parsed against API result",
+      "passed": true
+    },
+    {
+      "name": "30-day forecast and stale result protection",
+      "passed": true
+    },
+    {
+      "name": "1-day forecast keeps the independent 30-day comparison",
+      "passed": true
+    },
+    {
+      "name": "Controls and exports disabled during a real pending request",
+      "passed": true
+    },
+    {
+      "name": "All six synthetic sample flows",
+      "passed": true
+    },
+    {
+      "name": "Observed sample CSV download",
+      "passed": true
+    },
+    {
+      "name": "Valid CSV upload",
+      "passed": true
+    },
+    {
+      "name": "CSV clear marks results stale",
+      "passed": true
+    },
+    {
+      "name": "Rejected missing-date CSV and recoverable error display",
+      "passed": true
+    },
+    {
+      "name": "Reset restores defaults and computes a fresh result",
+      "passed": true
+    },
+    {
+      "name": "Next-day deadline, full timestamp dates and custom scenario multiplier",
+      "passed": true
+    },
+    {
+      "name": "Evaluation details and limitations visible",
+      "passed": true
+    },
+    {
+      "name": "390px mobile flow and contained horizontal table scrolling",
+      "passed": true
+    },
+    {
+      "name": "Mobile metric switch and 30-day rerun",
+      "passed": true
+    },
+    {
+      "name": "No browser JavaScript or console errors",
+      "passed": true
+    }
+  ],
+  "console_errors": [],
+  "expected_console_errors": [
+    "Failed to load resource: the server responded with a status of 400 (BAD REQUEST)"
+  ],
+  "screenshots": [
+    "docs\\screenshots\\desktop-weekday.png",
+    "docs\\screenshots\\desktop-30days.png",
+    "docs\\screenshots\\desktop-input-error.png",
+    "docs\\screenshots\\mobile-390.png",
+    "docs\\screenshots\\mobile-390-30days.png"
+  ],
+  "passed": true
+}

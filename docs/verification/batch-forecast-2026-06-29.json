@@ -1,0 +1,2332 @@
+{
+  "as_of": "2026-06-29",
+  "evaluation": {
+    "audit_origins": [
+      "2026-04-30",
+      "2026-05-07",
+      "2026-05-14",
+      "2026-05-21",
+      "2026-05-28"
+    ],
+    "comparison_model": "weekday4",
+    "comparison_origin": "2026-05-28",
+    "development_end": 120,
+    "development_origins": [
+      "2026-03-01",
+      "2026-03-08",
+      "2026-03-15",
+      "2026-03-22",
+      "2026-03-29"
+    ],
+    "fold_results": [
+      {
+        "active_days": 7,
+        "active_deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 6,
+          "tp": 0
+        },
+        "active_runtime_mae": 11.588307142857147,
+        "active_volume_mae": 3062,
+        "completion_error_mean": 0.23333333333333378,
+        "days": 7,
+        "deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 6,
+          "tp": 0
+        },
+        "endpoint_abs_error": 6.814774999999997,
+        "endpoint_error": 6.814774999999997,
+        "fit_ms": 13.056600000709295,
+        "horizon": 7,
+        "latest_start_mae": 11.59047619047619,
+        "model": "weekday4",
+        "origin": 120,
+        "predict_ms": 0.2405000850558281,
+        "runtime_mae": 11.588307142857147,
+        "runtime_rmse": 16.032245863337433,
+        "volume_mae": 3062
+      },
+      {
+        "active_days": 30,
+        "active_deadline": {
+          "fn": 2,
+          "fp": 0,
+          "tn": 28,
+          "tp": 0
+        },
+        "active_runtime_mae": 7.981269166666668,
+        "active_volume_mae": 2230.775,
+        "completion_error_mean": 1.7061111111111102,
+        "days": 30,
+        "deadline": {
+          "fn": 2,
+          "fp": 0,
+          "tn": 28,
+          "tp": 0
+        },
+        "endpoint_abs_error": 8.596350000000001,
+        "endpoint_error": -8.596350000000001,
+        "fit_ms": 13.056600000709295,
+        "horizon": 30,
+        "latest_start_mae": 7.980555555555555,
+        "model": "weekday4",
+        "origin": 120,
+        "predict_ms": 0.2405000850558281,
+        "runtime_mae": 7.981269166666668,
+        "runtime_rmse": 11.283703900889,
+        "volume_mae": 2230.775
+      },
+      {
+        "active_days": 7,
+        "active_deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 6,
+          "tp": 0
+        },
+        "active_runtime_mae": 24.381597959183676,
+        "active_volume_mae": 7334.163265306122,
+        "completion_error_mean": 11.407142857142858,
+        "days": 7,
+        "deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 6,
+          "tp": 0
+        },
+        "endpoint_abs_error": 9.550157142857145,
+        "endpoint_error": 9.550157142857145,
+        "fit_ms": 0.6876999977976084,
+        "horizon": 7,
+        "latest_start_mae": 24.378571428571433,
+        "model": "mean7",
+        "origin": 120,
+        "predict_ms": 0.0820998102426529,
+        "runtime_mae": 24.381597959183676,
+        "runtime_rmse": 31.72407045183933,
+        "volume_mae": 7334.163265306122
+      },
+      {
+        "active_days": 30,
+        "active_deadline": {
+          "fn": 2,
+          "fp": 0,
+          "tn": 28,
+          "tp": 0
+        },
+        "active_runtime_mae": 23.31900952380953,
+        "active_volume_mae": 8050.566666666667,
+        "completion_error_mean": 13.228333333333332,
+        "days": 30,
+        "deadline": {
+          "fn": 2,
+          "fp": 0,
+          "tn": 28,
+          "tp": 0
+        },
+        "endpoint_abs_error": 37.77325714285715,
+        "endpoint_error": 37.77325714285715,
+        "fit_ms": 0.6876999977976084,
+        "horizon": 30,
+        "latest_start_mae": 23.31722222222222,
+        "model": "mean7",
+        "origin": 120,
+        "predict_ms": 0.0820998102426529,
+        "runtime_mae": 23.31900952380953,
+        "runtime_rmse": 30.978222923988277,
+        "volume_mae": 8050.566666666667
+      },
+      {
+        "active_days": 7,
+        "active_deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 6,
+          "tp": 1
+        },
+        "active_runtime_mae": 13.338480858926982,
+        "active_volume_mae": 3649.1603270998207,
+        "completion_error_mean": 8.285714285714288,
+        "days": 7,
+        "deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 6,
+          "tp": 1
+        },
+        "endpoint_abs_error": 14.893401912365377,
+        "endpoint_error": 14.893401912365377,
+        "fit_ms": 35.934099927544594,
+        "horizon": 7,
+        "latest_start_mae": 13.333333333333337,
+        "model": "ridge",
+        "origin": 120,
+        "predict_ms": 4.216899862512946,
+        "runtime_mae": 13.338480858926982,
+        "runtime_rmse": 15.519815052876574,
+        "volume_mae": 3649.1603270998207
+      },
+      {
+        "active_days": 30,
+        "active_deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 28,
+          "tp": 1
+        },
+        "active_runtime_mae": 8.507694472369037,
+        "active_volume_mae": 2472.0124456107824,
+        "completion_error_mean": 5.262777777777779,
+        "days": 30,
+        "deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 28,
+          "tp": 1
+        },
+        "endpoint_abs_error": 3.8880610751550506,
+        "endpoint_error": -3.8880610751550506,
+        "fit_ms": 35.934099927544594,
+        "horizon": 30,
+        "latest_start_mae": 8.506111111111112,
+        "model": "ridge",
+        "origin": 120,
+        "predict_ms": 4.216899862512946,
+        "runtime_mae": 8.507694472369037,
+        "runtime_rmse": 11.039127581703447,
+        "volume_mae": 2472.0124456107824
+      },
+      {
+        "active_days": 7,
+        "active_deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "active_runtime_mae": 7.4232000000000005,
+        "active_volume_mae": 2200.3928571428573,
+        "completion_error_mean": 3.3071428571428574,
+        "days": 7,
+        "deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "endpoint_abs_error": 10.836349999999996,
+        "endpoint_error": -10.836349999999996,
+        "fit_ms": 10.1713000331074,
+        "horizon": 7,
+        "latest_start_mae": 7.426190476190475,
+        "model": "weekday4",
+        "origin": 127,
+        "predict_ms": 0.11570006608963013,
+        "runtime_mae": 7.4232000000000005,
+        "runtime_rmse": 10.50364635719255,
+        "volume_mae": 2200.3928571428573
+      },
+      {
+        "active_days": 30,
+        "active_deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "active_runtime_mae": 6.488565833333333,
+        "active_volume_mae": 1933.4416666666666,
+        "completion_error_mean": 4.49388888888889,
+        "days": 30,
+        "deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "endpoint_abs_error": 0.5765500000000046,
+        "endpoint_error": -0.5765500000000046,
+        "fit_ms": 10.1713000331074,
+        "horizon": 30,
+        "latest_start_mae": 6.488333333333332,
+        "model": "weekday4",
+        "origin": 127,
+        "predict_ms": 0.11570006608963013,
+        "runtime_mae": 6.488565833333333,
+        "runtime_rmse": 9.033758783489342,
+        "volume_mae": 1933.4416666666666
+      },
+      {
+        "active_days": 7,
+        "active_deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "active_runtime_mae": 22.784485714285715,
+        "active_volume_mae": 9087.591836734695,
+        "completion_error_mean": 1.471428571428568,
+        "days": 7,
+        "deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "endpoint_abs_error": 19.862700000000004,
+        "endpoint_error": -19.862700000000004,
+        "fit_ms": 0.9787001181393862,
+        "horizon": 7,
+        "latest_start_mae": 22.785714285714285,
+        "model": "mean7",
+        "origin": 127,
+        "predict_ms": 0.121300108730793,
+        "runtime_mae": 22.784485714285715,
+        "runtime_rmse": 27.78895806708639,
+        "volume_mae": 9087.591836734695
+      },
+      {
+        "active_days": 30,
+        "active_deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "active_runtime_mae": 22.192653333333336,
+        "active_volume_mae": 8633.357142857143,
+        "completion_error_mean": 2.6655555555555526,
+        "days": 30,
+        "deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "endpoint_abs_error": 29.76879999999999,
+        "endpoint_error": 29.76879999999999,
+        "fit_ms": 0.9787001181393862,
+        "horizon": 30,
+        "latest_start_mae": 22.19333333333333,
+        "model": "mean7",
+        "origin": 127,
+        "predict_ms": 0.121300108730793,
+        "runtime_mae": 22.192653333333336,
+        "runtime_rmse": 26.984435176671756,
+        "volume_mae": 8633.357142857143
+      },
+      {
+        "active_days": 7,
+        "active_deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "active_runtime_mae": 8.440650476295826,
+        "active_volume_mae": 2098.7666295255717,
+        "completion_error_mean": -2.4142857142857155,
+        "days": 7,
+        "deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "endpoint_abs_error": 16.043709054589073,
+        "endpoint_error": -16.043709054589073,
+        "fit_ms": 38.279599975794554,
+        "horizon": 7,
+        "latest_start_mae": 8.438095238095238,
+        "model": "ridge",
+        "origin": 127,
+        "predict_ms": 3.254199866205454,
+        "runtime_mae": 8.440650476295826,
+        "runtime_rmse": 9.446583443754358,
+        "volume_mae": 2098.7666295255717
+      },
+      {
+        "active_days": 30,
+        "active_deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "active_runtime_mae": 6.5084081714369555,
+        "active_volume_mae": 1791.622955033586,
+        "completion_error_mean": -0.13444444444444378,
+        "days": 30,
+        "deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "endpoint_abs_error": 3.884959678150146,
+        "endpoint_error": -3.884959678150146,
+        "fit_ms": 38.279599975794554,
+        "horizon": 30,
+        "latest_start_mae": 6.506666666666666,
+        "model": "ridge",
+        "origin": 127,
+        "predict_ms": 3.254199866205454,
+        "runtime_mae": 6.5084081714369555,
+        "runtime_rmse": 7.940477805182033,
+        "volume_mae": 1791.622955033586
+      },
+      {
+        "active_days": 7,
+        "active_deadline": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 6,
+          "tp": 0
+        },
+        "active_runtime_mae": 8.360607142857138,
+        "active_volume_mae": 2465.214285714286,
+        "completion_error_mean": 5.08809523809524,
+        "days": 7,
+        "deadline": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 6,
+          "tp": 0
+        },
+        "endpoint_abs_error": 8.967624999999984,
+        "endpoint_error": 8.967624999999984,
+        "fit_ms": 10.962400119751692,
+        "horizon": 7,
+        "latest_start_mae": 8.359523809523811,
+        "model": "weekday4",
+        "origin": 134,
+        "predict_ms": 0.22360007278621197,
+        "runtime_mae": 8.360607142857138,
+        "runtime_rmse": 9.580056276322178,
+        "volume_mae": 2465.214285714286
+      },
+      {
+        "active_days": 30,
+        "active_deadline": {
+          "fn": 0,
+          "fp": 4,
+          "tn": 25,
+          "tp": 1
+        },
+        "active_runtime_mae": 7.336510833333332,
+        "active_volume_mae": 2066.9166666666665,
+        "completion_error_mean": 4.94666666666667,
+        "days": 30,
+        "deadline": {
+          "fn": 0,
+          "fp": 4,
+          "tn": 25,
+          "tp": 1
+        },
+        "endpoint_abs_error": 4.7064749999999975,
+        "endpoint_error": -4.7064749999999975,
+        "fit_ms": 10.962400119751692,
+        "horizon": 30,
+        "latest_start_mae": 7.335555555555556,
+        "model": "weekday4",
+        "origin": 134,
+        "predict_ms": 0.22360007278621197,
+        "runtime_mae": 7.336510833333332,
+        "runtime_rmse": 9.399920077493787,
+        "volume_mae": 2066.9166666666665
+      },
+      {
+        "active_days": 7,
+        "active_deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "active_runtime_mae": 21.909430612244897,
+        "active_volume_mae": 8978.91836734694,
+        "completion_error_mean": 1.4333333333333371,
+        "days": 7,
+        "deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "endpoint_abs_error": 5.478514285714283,
+        "endpoint_error": -5.478514285714283,
+        "fit_ms": 0.8189999498426914,
+        "horizon": 7,
+        "latest_start_mae": 21.909523809523808,
+        "model": "mean7",
+        "origin": 134,
+        "predict_ms": 0.11160015128552914,
+        "runtime_mae": 21.909430612244897,
+        "runtime_rmse": 26.145461907632637,
+        "volume_mae": 8978.91836734694
+      },
+      {
+        "active_days": 30,
+        "active_deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "active_runtime_mae": 21.56683047619048,
+        "active_volume_mae": 8309.819047619048,
+        "completion_error_mean": 1.182222222222226,
+        "days": 30,
+        "deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "endpoint_abs_error": 23.728085714285726,
+        "endpoint_error": 23.728085714285726,
+        "fit_ms": 0.8189999498426914,
+        "horizon": 30,
+        "latest_start_mae": 21.565555555555548,
+        "model": "mean7",
+        "origin": 134,
+        "predict_ms": 0.11160015128552914,
+        "runtime_mae": 21.56683047619048,
+        "runtime_rmse": 25.855395867971882,
+        "volume_mae": 8309.819047619048
+      },
+      {
+        "active_days": 7,
+        "active_deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "active_runtime_mae": 7.375234978433126,
+        "active_volume_mae": 2236.9208134970972,
+        "completion_error_mean": 0.43333333333333435,
+        "days": 7,
+        "deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "endpoint_abs_error": 6.3628748674316284,
+        "endpoint_error": 6.3628748674316284,
+        "fit_ms": 28.490900062024593,
+        "horizon": 7,
+        "latest_start_mae": 7.371428571428572,
+        "model": "ridge",
+        "origin": 134,
+        "predict_ms": 3.167100017890334,
+        "runtime_mae": 7.375234978433126,
+        "runtime_rmse": 7.964374196734557,
+        "volume_mae": 2236.9208134970972
+      },
+      {
+        "active_days": 30,
+        "active_deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "active_runtime_mae": 6.260053299272365,
+        "active_volume_mae": 1696.5103107304408,
+        "completion_error_mean": 0.4911111111111116,
+        "days": 30,
+        "deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "endpoint_abs_error": 8.636549934103861,
+        "endpoint_error": -8.636549934103861,
+        "fit_ms": 28.490900062024593,
+        "horizon": 30,
+        "latest_start_mae": 6.257777777777777,
+        "model": "ridge",
+        "origin": 134,
+        "predict_ms": 3.167100017890334,
+        "runtime_mae": 6.260053299272365,
+        "runtime_rmse": 7.647052716749536,
+        "volume_mae": 1696.5103107304408
+      },
+      {
+        "active_days": 7,
+        "active_deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 6,
+          "tp": 1
+        },
+        "active_runtime_mae": 5.495421428571436,
+        "active_volume_mae": 1801.5357142857142,
+        "completion_error_mean": 4.445238095238095,
+        "days": 7,
+        "deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 6,
+          "tp": 1
+        },
+        "endpoint_abs_error": 2.4705000000000013,
+        "endpoint_error": 2.4705000000000013,
+        "fit_ms": 8.75340006314218,
+        "horizon": 7,
+        "latest_start_mae": 5.492857142857143,
+        "model": "weekday4",
+        "origin": 141,
+        "predict_ms": 0.16639987006783485,
+        "runtime_mae": 5.495421428571436,
+        "runtime_rmse": 8.048856056575021,
+        "volume_mae": 1801.5357142857142
+      },
+      {
+        "active_days": 30,
+        "active_deadline": {
+          "fn": 0,
+          "fp": 3,
+          "tn": 25,
+          "tp": 2
+        },
+        "active_runtime_mae": 7.682900833333332,
+        "active_volume_mae": 2002.25,
+        "completion_error_mean": 1.8005555555555546,
+        "days": 30,
+        "deadline": {
+          "fn": 0,
+          "fp": 3,
+          "tn": 25,
+          "tp": 2
+        },
+        "endpoint_abs_error": 0.20367499999999694,
+        "endpoint_error": -0.20367499999999694,
+        "fit_ms": 8.75340006314218,
+        "horizon": 30,
+        "latest_start_mae": 7.681666666666667,
+        "model": "weekday4",
+        "origin": 141,
+        "predict_ms": 0.16639987006783485,
+        "runtime_mae": 7.682900833333332,
+        "runtime_rmse": 10.638787829934111,
+        "volume_mae": 2002.25
+      },
+      {
+        "active_days": 7,
+        "active_deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 6,
+          "tp": 0
+        },
+        "active_runtime_mae": 25.08439795918368,
+        "active_volume_mae": 8499.367346938776,
+        "completion_error_mean": -0.21904761904761877,
+        "days": 7,
+        "deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 6,
+          "tp": 0
+        },
+        "endpoint_abs_error": 12.169785714285723,
+        "endpoint_error": -12.169785714285723,
+        "fit_ms": 0.7793998811393976,
+        "horizon": 7,
+        "latest_start_mae": 25.080952380952386,
+        "model": "mean7",
+        "origin": 141,
+        "predict_ms": 0.12340000830590725,
+        "runtime_mae": 25.08439795918368,
+        "runtime_rmse": 29.450708725698245,
+        "volume_mae": 8499.367346938776
+      },
+      {
+        "active_days": 30,
+        "active_deadline": {
+          "fn": 2,
+          "fp": 0,
+          "tn": 28,
+          "tp": 0
+        },
+        "active_runtime_mae": 23.93862857142857,
+        "active_volume_mae": 8466.285714285714,
+        "completion_error_mean": -2.9605555555555574,
+        "days": 30,
+        "deadline": {
+          "fn": 2,
+          "fp": 0,
+          "tn": 28,
+          "tp": 0
+        },
+        "endpoint_abs_error": 28.915614285714277,
+        "endpoint_error": 28.915614285714277,
+        "fit_ms": 0.7793998811393976,
+        "horizon": 30,
+        "latest_start_mae": 23.938333333333336,
+        "model": "mean7",
+        "origin": 141,
+        "predict_ms": 0.12340000830590725,
+        "runtime_mae": 23.93862857142857,
+        "runtime_rmse": 28.41092553175399,
+        "volume_mae": 8466.285714285714
+      },
+      {
+        "active_days": 7,
+        "active_deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 6,
+          "tp": 0
+        },
+        "active_runtime_mae": 6.458333592728336,
+        "active_volume_mae": 1772.5632798987488,
+        "completion_error_mean": 0.2500000000000005,
+        "days": 7,
+        "deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 6,
+          "tp": 0
+        },
+        "endpoint_abs_error": 2.7449725549393236,
+        "endpoint_error": -2.7449725549393236,
+        "fit_ms": 31.702999956905842,
+        "horizon": 7,
+        "latest_start_mae": 6.454761904761905,
+        "model": "ridge",
+        "origin": 141,
+        "predict_ms": 2.7798002120107412,
+        "runtime_mae": 6.458333592728336,
+        "runtime_rmse": 8.341041098179685,
+        "volume_mae": 1772.5632798987488
+      },
+      {
+        "active_days": 30,
+        "active_deadline": {
+          "fn": 2,
+          "fp": 0,
+          "tn": 28,
+          "tp": 0
+        },
+        "active_runtime_mae": 7.510572021088441,
+        "active_volume_mae": 2051.747659305197,
+        "completion_error_mean": -1.1122222222222224,
+        "days": 30,
+        "deadline": {
+          "fn": 2,
+          "fp": 0,
+          "tn": 28,
+          "tp": 0
+        },
+        "endpoint_abs_error": 1.0263470003304391,
+        "endpoint_error": -1.0263470003304391,
+        "fit_ms": 31.702999956905842,
+        "horizon": 30,
+        "latest_start_mae": 7.507777777777778,
+        "model": "ridge",
+        "origin": 141,
+        "predict_ms": 2.7798002120107412,
+        "runtime_mae": 7.510572021088441,
+        "runtime_rmse": 10.974041531126735,
+        "volume_mae": 2051.747659305197
+      },
+      {
+        "active_days": 7,
+        "active_deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "active_runtime_mae": 6.294567857142857,
+        "active_volume_mae": 1173.25,
+        "completion_error_mean": -0.030952380952381984,
+        "days": 7,
+        "deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "endpoint_abs_error": 0.1508749999999992,
+        "endpoint_error": 0.1508749999999992,
+        "fit_ms": 7.493800017982721,
+        "horizon": 7,
+        "latest_start_mae": 6.292857142857143,
+        "model": "weekday4",
+        "origin": 148,
+        "predict_ms": 0.17120013944804668,
+        "runtime_mae": 6.294567857142857,
+        "runtime_rmse": 8.325956718326516,
+        "volume_mae": 1173.25
+      },
+      {
+        "active_days": 30,
+        "active_deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "active_runtime_mae": 8.51559166666667,
+        "active_volume_mae": 2385.15,
+        "completion_error_mean": -1.81388888888889,
+        "days": 30,
+        "deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "endpoint_abs_error": 2.4652750000000054,
+        "endpoint_error": -2.4652750000000054,
+        "fit_ms": 7.493800017982721,
+        "horizon": 30,
+        "latest_start_mae": 8.513888888888891,
+        "model": "weekday4",
+        "origin": 148,
+        "predict_ms": 0.17120013944804668,
+        "runtime_mae": 8.51559166666667,
+        "runtime_rmse": 11.747344207300289,
+        "volume_mae": 2385.15
+      },
+      {
+        "active_days": 7,
+        "active_deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "active_runtime_mae": 21.24668571428572,
+        "active_volume_mae": 8145.755102040816,
+        "completion_error_mean": -0.9523809523809506,
+        "days": 7,
+        "deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "endpoint_abs_error": 11.284500000000008,
+        "endpoint_error": -11.284500000000008,
+        "fit_ms": 0.8390999864786863,
+        "horizon": 7,
+        "latest_start_mae": 21.24761904761905,
+        "model": "mean7",
+        "origin": 148,
+        "predict_ms": 0.11199992150068283,
+        "runtime_mae": 21.24668571428572,
+        "runtime_rmse": 25.241017812226648,
+        "volume_mae": 8145.755102040816
+      },
+      {
+        "active_days": 30,
+        "active_deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "active_runtime_mae": 23.197706666666665,
+        "active_volume_mae": 8806.67142857143,
+        "completion_error_mean": -2.926666666666667,
+        "days": 30,
+        "deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "endpoint_abs_error": 30.020099999999985,
+        "endpoint_error": 30.020099999999985,
+        "fit_ms": 0.8390999864786863,
+        "horizon": 30,
+        "latest_start_mae": 23.197777777777777,
+        "model": "mean7",
+        "origin": 148,
+        "predict_ms": 0.11199992150068283,
+        "runtime_mae": 23.197706666666665,
+        "runtime_rmse": 27.475714179531955,
+        "volume_mae": 8806.67142857143
+      },
+      {
+        "active_days": 7,
+        "active_deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "active_runtime_mae": 5.000206189440365,
+        "active_volume_mae": 1673.947007685049,
+        "completion_error_mean": 2.285714285714286,
+        "days": 7,
+        "deadline": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 7,
+          "tp": 0
+        },
+        "endpoint_abs_error": 3.235813338626855,
+        "endpoint_error": -3.235813338626855,
+        "fit_ms": 32.99229987896979,
+        "horizon": 7,
+        "latest_start_mae": 5,
+        "model": "ridge",
+        "origin": 148,
+        "predict_ms": 2.788499929010868,
+        "runtime_mae": 5.000206189440365,
+        "runtime_rmse": 6.93137381048731,
+        "volume_mae": 1673.947007685049
+      },
+      {
+        "active_days": 30,
+        "active_deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "active_runtime_mae": 7.6625288584157225,
+        "active_volume_mae": 2213.965250396883,
+        "completion_error_mean": -2.0016666666666665,
+        "days": 30,
+        "deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 29,
+          "tp": 0
+        },
+        "endpoint_abs_error": 1.2730570203976939,
+        "endpoint_error": -1.2730570203976939,
+        "fit_ms": 32.99229987896979,
+        "horizon": 30,
+        "latest_start_mae": 7.661666666666665,
+        "model": "ridge",
+        "origin": 148,
+        "predict_ms": 2.788499929010868,
+        "runtime_mae": 7.6625288584157225,
+        "runtime_rmse": 11.2500485261358,
+        "volume_mae": 2213.965250396883
+      }
+    ],
+    "selected_comparison": [
+      {
+        "actual_records": 32976,
+        "actual_runtime": 103.8196,
+        "date": "2026-05-29",
+        "predicted_records": 37148,
+        "predicted_runtime": 119.909875
+      },
+      {
+        "actual_records": 13678,
+        "actual_runtime": 56.1683,
+        "date": "2026-05-30",
+        "predicted_records": 12599.5,
+        "predicted_runtime": 47.358025
+      },
+      {
+        "actual_records": 7991,
+        "actual_runtime": 32.4767,
+        "date": "2026-05-31",
+        "predicted_records": 7996.25,
+        "predicted_runtime": 35.86055
+      },
+      {
+        "actual_records": 33184,
+        "actual_runtime": 108.9539,
+        "date": "2026-06-01",
+        "predicted_records": 31610.25,
+        "predicted_runtime": 97.644825
+      },
+      {
+        "actual_records": 27065,
+        "actual_runtime": 89.4499,
+        "date": "2026-06-02",
+        "predicted_records": 26881.5,
+        "predicted_runtime": 87.43885
+      },
+      {
+        "actual_records": 26827,
+        "actual_runtime": 83.5507,
+        "date": "2026-06-03",
+        "predicted_records": 26592,
+        "predicted_runtime": 85.85727499999999
+      },
+      {
+        "actual_records": 30561,
+        "actual_runtime": 91.1279,
+        "date": "2026-06-04",
+        "predicted_records": 29596.25,
+        "predicted_runtime": 91.278775
+      },
+      {
+        "actual_records": 31871,
+        "actual_runtime": 93.8015,
+        "date": "2026-06-05",
+        "predicted_records": 37148,
+        "predicted_runtime": 119.909875
+      },
+      {
+        "actual_records": 13707,
+        "actual_runtime": 52.761,
+        "date": "2026-06-06",
+        "predicted_records": 12599.5,
+        "predicted_runtime": 47.358025
+      },
+      {
+        "actual_records": 9180,
+        "actual_runtime": 38.3579,
+        "date": "2026-06-07",
+        "predicted_records": 7996.25,
+        "predicted_runtime": 35.86055
+      },
+      {
+        "actual_records": 30218,
+        "actual_runtime": 90.4855,
+        "date": "2026-06-08",
+        "predicted_records": 31610.25,
+        "predicted_runtime": 97.644825
+      },
+      {
+        "actual_records": 24127,
+        "actual_runtime": 81.5625,
+        "date": "2026-06-09",
+        "predicted_records": 26881.5,
+        "predicted_runtime": 87.43885
+      },
+      {
+        "actual_records": 30514,
+        "actual_runtime": 95.7433,
+        "date": "2026-06-10",
+        "predicted_records": 26592,
+        "predicted_runtime": 85.85727499999999
+      },
+      {
+        "actual_records": 30451,
+        "actual_runtime": 92.5492,
+        "date": "2026-06-11",
+        "predicted_records": 29596.25,
+        "predicted_runtime": 91.278775
+      },
+      {
+        "actual_records": 35630,
+        "actual_runtime": 111.8528,
+        "date": "2026-06-12",
+        "predicted_records": 37148,
+        "predicted_runtime": 119.909875
+      },
+      {
+        "actual_records": 13543,
+        "actual_runtime": 57.327,
+        "date": "2026-06-13",
+        "predicted_records": 12599.5,
+        "predicted_runtime": 47.358025
+      },
+      {
+        "actual_records": 11319,
+        "actual_runtime": 41.9195,
+        "date": "2026-06-14",
+        "predicted_records": 7996.25,
+        "predicted_runtime": 35.86055
+      },
+      {
+        "actual_records": 33985,
+        "actual_runtime": 100.5493,
+        "date": "2026-06-15",
+        "predicted_records": 31610.25,
+        "predicted_runtime": 97.644825
+      },
+      {
+        "actual_records": 30738,
+        "actual_runtime": 98.6155,
+        "date": "2026-06-16",
+        "predicted_records": 26881.5,
+        "predicted_runtime": 87.43885
+      },
+      {
+        "actual_records": 25179,
+        "actual_runtime": 83.8233,
+        "date": "2026-06-17",
+        "predicted_records": 26592,
+        "predicted_runtime": 85.85727499999999
+      },
+      {
+        "actual_records": 36565,
+        "actual_runtime": 115.5607,
+        "date": "2026-06-18",
+        "predicted_records": 29596.25,
+        "predicted_runtime": 91.278775
+      },
+      {
+        "actual_records": 40689,
+        "actual_runtime": 147.4954,
+        "date": "2026-06-19",
+        "predicted_records": 37148,
+        "predicted_runtime": 119.909875
+      },
+      {
+        "actual_records": 14826,
+        "actual_runtime": 50.7122,
+        "date": "2026-06-20",
+        "predicted_records": 12599.5,
+        "predicted_runtime": 47.358025
+      },
+      {
+        "actual_records": 9149,
+        "actual_runtime": 34.9559,
+        "date": "2026-06-21",
+        "predicted_records": 7996.25,
+        "predicted_runtime": 35.86055
+      },
+      {
+        "actual_records": 36644,
+        "actual_runtime": 111.6908,
+        "date": "2026-06-22",
+        "predicted_records": 31610.25,
+        "predicted_runtime": 97.644825
+      },
+      {
+        "actual_records": 30824,
+        "actual_runtime": 95.5502,
+        "date": "2026-06-23",
+        "predicted_records": 26881.5,
+        "predicted_runtime": 87.43885
+      },
+      {
+        "actual_records": 29933,
+        "actual_runtime": 89.6482,
+        "date": "2026-06-24",
+        "predicted_records": 26592,
+        "predicted_runtime": 85.85727499999999
+      },
+      {
+        "actual_records": 29785,
+        "actual_runtime": 90.5136,
+        "date": "2026-06-25",
+        "predicted_records": 29596.25,
+        "predicted_runtime": 91.278775
+      },
+      {
+        "actual_records": 31244,
+        "actual_runtime": 92.21,
+        "date": "2026-06-26",
+        "predicted_records": 37148,
+        "predicted_runtime": 119.909875
+      },
+      {
+        "actual_records": 13722,
+        "actual_runtime": 49.8233,
+        "date": "2026-06-27",
+        "predicted_records": 12599.5,
+        "predicted_runtime": 47.358025
+      }
+    ],
+    "selected_model": "weekday4",
+    "selection_rule": "開発区間の7日先・所要時間MAE。最良値×1.05＋0.1分以内は同曜日平均→7日平均→回帰の順。監査結果は選択に使いません。",
+    "selection_scores": {
+      "mean7": 23.982177142857147,
+      "ridge": 9.800368158257328,
+      "weekday4": 9.449019285714286
+    },
+    "summary": [
+      {
+        "deadline": {
+          "fn": 1,
+          "fp": 1,
+          "tn": 32,
+          "tp": 1
+        },
+        "endpoint_abs_error": 5.848024999999995,
+        "folds": 5,
+        "horizon": 7,
+        "improvement_pct": 0,
+        "latest_start_mae": 7.832380952380953,
+        "model": "weekday4",
+        "model_label": "直近4週の同曜日平均（基準）",
+        "runtime_mae": 7.832420714285716,
+        "runtime_rmse": 10.498152254350739,
+        "volume_mae": 2140.4785714285713
+      },
+      {
+        "deadline": {
+          "fn": 2,
+          "fp": 0,
+          "tn": 33,
+          "tp": 0
+        },
+        "endpoint_abs_error": 11.669131428571433,
+        "folds": 5,
+        "horizon": 7,
+        "improvement_pct": -194.6894763931442,
+        "latest_start_mae": 23.080476190476194,
+        "model": "mean7",
+        "model_label": "直近7日平均",
+        "runtime_mae": 23.08131959183674,
+        "runtime_rmse": 28.07004339289665,
+        "volume_mae": 8409.15918367347
+      },
+      {
+        "deadline": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 33,
+          "tp": 1
+        },
+        "endpoint_abs_error": 8.656154345590451,
+        "folds": 5,
+        "horizon": 7,
+        "improvement_pct": -3.7046082617852845,
+        "latest_start_mae": 8.119523809523809,
+        "model": "ridge",
+        "model_label": "カレンダー付き回帰",
+        "runtime_mae": 8.122581219164926,
+        "runtime_rmse": 9.640637520406496,
+        "volume_mae": 2286.2716115412572
+      },
+      {
+        "deadline": {
+          "fn": 4,
+          "fp": 7,
+          "tn": 136,
+          "tp": 3
+        },
+        "endpoint_abs_error": 3.309665000000001,
+        "folds": 5,
+        "horizon": 30,
+        "improvement_pct": 0,
+        "latest_start_mae": 7.6,
+        "model": "weekday4",
+        "model_label": "直近4週の同曜日平均（基準）",
+        "runtime_mae": 7.600967666666667,
+        "runtime_rmse": 10.420702959821305,
+        "volume_mae": 2123.7066666666665
+      },
+      {
+        "deadline": {
+          "fn": 7,
+          "fp": 0,
+          "tn": 143,
+          "tp": 0
+        },
+        "endpoint_abs_error": 30.041171428571424,
+        "folds": 5,
+        "horizon": 30,
+        "improvement_pct": -200.52707386799457,
+        "latest_start_mae": 22.842444444444443,
+        "model": "mean7",
+        "model_label": "直近7日平均",
+        "runtime_mae": 22.842965714285715,
+        "runtime_rmse": 27.940938735983572,
+        "volume_mae": 8453.34
+      },
+      {
+        "deadline": {
+          "fn": 6,
+          "fp": 0,
+          "tn": 143,
+          "tp": 1
+        },
+        "endpoint_abs_error": 3.7417949416274383,
+        "folds": 5,
+        "horizon": 30,
+        "improvement_pct": 4.09311440061155,
+        "latest_start_mae": 7.287999999999999,
+        "model": "ridge",
+        "model_label": "カレンダー付き回帰",
+        "runtime_mae": 7.2898513645165055,
+        "runtime_rmse": 9.77014963217951,
+        "volume_mae": 2045.171724215378
+      }
+    ]
+  },
+  "forecast": [
+    {
+      "date": "2026-06-30",
+      "deadline_at": "2026-07-01T00:00:00+09:00",
+      "finish_at": "2026-06-30T23:31:18+09:00",
+      "latest_start_at": "2026-06-30T22:13:42+09:00",
+      "records": 28188.5,
+      "runtime_minutes": 91.29452500000001,
+      "slack_minutes": 28.7,
+      "start_at": "2026-06-30T22:00:00+09:00",
+      "status": "ok"
+    },
+    {
+      "date": "2026-07-01",
+      "deadline_at": "2026-07-02T00:00:00+09:00",
+      "finish_at": "2026-07-01T23:28:12+09:00",
+      "latest_start_at": "2026-07-01T22:16:48+09:00",
+      "records": 28113.25,
+      "runtime_minutes": 88.191375,
+      "slack_minutes": 31.8,
+      "start_at": "2026-07-01T22:00:00+09:00",
+      "status": "ok"
+    },
+    {
+      "date": "2026-07-02",
+      "deadline_at": "2026-07-03T00:00:00+09:00",
+      "finish_at": "2026-07-02T23:37:27+09:00",
+      "latest_start_at": "2026-07-02T22:07:33+09:00",
+      "records": 31840.5,
+      "runtime_minutes": 97.43785,
+      "slack_minutes": 22.55,
+      "start_at": "2026-07-02T22:00:00+09:00",
+      "status": "ok"
+    },
+    {
+      "date": "2026-07-03",
+      "deadline_at": "2026-07-04T00:00:00+09:00",
+      "finish_at": "2026-07-03T23:51:21+09:00",
+      "latest_start_at": "2026-07-03T21:53:39+09:00",
+      "records": 34858.5,
+      "runtime_minutes": 111.339925,
+      "slack_minutes": 8.65,
+      "start_at": "2026-07-03T22:00:00+09:00",
+      "status": "tight"
+    },
+    {
+      "date": "2026-07-04",
+      "deadline_at": "2026-07-05T00:00:00+09:00",
+      "finish_at": "2026-07-04T22:52:40+09:00",
+      "latest_start_at": "2026-07-04T22:52:20+09:00",
+      "records": 13949.5,
+      "runtime_minutes": 52.655874999999995,
+      "slack_minutes": 67.33333333333333,
+      "start_at": "2026-07-04T22:00:00+09:00",
+      "status": "ok"
+    },
+    {
+      "date": "2026-07-05",
+      "deadline_at": "2026-07-06T00:00:00+09:00",
+      "finish_at": "2026-07-05T22:36:25+09:00",
+      "latest_start_at": "2026-07-05T23:08:35+09:00",
+      "records": 9050.75,
+      "runtime_minutes": 36.400425,
+      "slack_minutes": 83.58333333333333,
+      "start_at": "2026-07-05T22:00:00+09:00",
+      "status": "ok"
+    },
+    {
+      "date": "2026-07-06",
+      "deadline_at": "2026-07-07T00:00:00+09:00",
+      "finish_at": "2026-07-06T23:40:19+09:00",
+      "latest_start_at": "2026-07-06T22:04:41+09:00",
+      "records": 33114,
+      "runtime_minutes": 100.30449999999999,
+      "slack_minutes": 19.683333333333334,
+      "start_at": "2026-07-06T22:00:00+09:00",
+      "status": "ok"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-01-01",
+      "records": 30470,
+      "runtime_minutes": 94.7179
+    },
+    {
+      "date": "2026-01-02",
+      "records": 35905,
+      "runtime_minutes": 119.7959
+    },
+    {
+      "date": "2026-01-03",
+      "records": 13688,
+      "runtime_minutes": 49.0712
+    },
+    {
+      "date": "2026-01-04",
+      "records": 8922,
+      "runtime_minutes": 42.6261
+    },
+    {
+      "date": "2026-01-05",
+      "records": 31784,
+      "runtime_minutes": 96.678
+    },
+    {
+      "date": "2026-01-06",
+      "records": 31091,
+      "runtime_minutes": 97.9908
+    },
+    {
+      "date": "2026-01-07",
+      "records": 32627,
+      "runtime_minutes": 99.5387
+    },
+    {
+      "date": "2026-01-08",
+      "records": 34076,
+      "runtime_minutes": 100.9452
+    },
+    {
+      "date": "2026-01-09",
+      "records": 34851,
+      "runtime_minutes": 101.657
+    },
+    {
+      "date": "2026-01-10",
+      "records": 12220,
+      "runtime_minutes": 60.8141
+    },
+    {
+      "date": "2026-01-11",
+      "records": 9087,
+      "runtime_minutes": 40.4081
+    },
+    {
+      "date": "2026-01-12",
+      "records": 34287,
+      "runtime_minutes": 95.6509
+    },
+    {
+      "date": "2026-01-13",
+      "records": 24481,
+      "runtime_minutes": 76.6081
+    },
+    {
+      "date": "2026-01-14",
+      "records": 28555,
+      "runtime_minutes": 92.0997
+    },
+    {
+      "date": "2026-01-15",
+      "records": 27844,
+      "runtime_minutes": 85.61
+    },
+    {
+      "date": "2026-01-16",
+      "records": 34901,
+      "runtime_minutes": 110.6943
+    },
+    {
+      "date": "2026-01-17",
+      "records": 13055,
+      "runtime_minutes": 54.6471
+    },
+    {
+      "date": "2026-01-18",
+      "records": 9203,
+      "runtime_minutes": 40.3981
+    },
+    {
+      "date": "2026-01-19",
+      "records": 35268,
+      "runtime_minutes": 104.97
+    },
+    {
+      "date": "2026-01-20",
+      "records": 33369,
+      "runtime_minutes": 97.4033
+    },
+    {
+      "date": "2026-01-21",
+      "records": 28283,
+      "runtime_minutes": 85.9076
+    },
+    {
+      "date": "2026-01-22",
+      "records": 35137,
+      "runtime_minutes": 100.2683
+    },
+    {
+      "date": "2026-01-23",
+      "records": 34384,
+      "runtime_minutes": 108.7776
+    },
+    {
+      "date": "2026-01-24",
+      "records": 13328,
+      "runtime_minutes": 57.6828
+    },
+    {
+      "date": "2026-01-25",
+      "records": 9332,
+      "runtime_minutes": 36.3054
+    },
+    {
+      "date": "2026-01-26",
+      "records": 33207,
+      "runtime_minutes": 96.2908
+    },
+    {
+      "date": "2026-01-27",
+      "records": 27017,
+      "runtime_minutes": 78.4685
+    },
+    {
+      "date": "2026-01-28",
+      "records": 25107,
+      "runtime_minutes": 76.9121
+    },
+    {
+      "date": "2026-01-29",
+      "records": 28287,
+      "runtime_minutes": 76.2922
+    },
+    {
+      "date": "2026-01-30",
+      "records": 36421,
+      "runtime_minutes": 109.1741
+    },
+    {
+      "date": "2026-01-31",
+      "records": 10590,
+      "runtime_minutes": 49.6627
+    },
+    {
+      "date": "2026-02-01",
+      "records": 7315,
+      "runtime_minutes": 34.9048
+    },
+    {
+      "date": "2026-02-02",
+      "records": 31372,
+      "runtime_minutes": 99.8483
+    },
+    {
+      "date": "2026-02-03",
+      "records": 29797,
+      "runtime_minutes": 90.5366
+    },
+    {
+      "date": "2026-02-04",
+      "records": 27301,
+      "runtime_minutes": 93.2952
+    },
+    {
+      "date": "2026-02-05",
+      "records": 29951,
+      "runtime_minutes": 93.6744
+    },
+    {
+      "date": "2026-02-06",
+      "records": 32655,
+      "runtime_minutes": 98.1095
+    },
+    {
+      "date": "2026-02-07",
+      "records": 11081,
+      "runtime_minutes": 55.9122
+    },
+    {
+      "date": "2026-02-08",
+      "records": 7741,
+      "runtime_minutes": 36.0546
+    },
+    {
+      "date": "2026-02-09",
+      "records": 36888,
+      "runtime_minutes": 111.8388
+    },
+    {
+      "date": "2026-02-10",
+      "records": 24546,
+      "runtime_minutes": 80.1726
+    },
+    {
+      "date": "2026-02-11",
+      "records": 31223,
+      "runtime_minutes": 95.9022
+    },
+    {
+      "date": "2026-02-12",
+      "records": 33307,
+      "runtime_minutes": 105.5328
+    },
+    {
+      "date": "2026-02-13",
+      "records": 38137,
+      "runtime_minutes": 121.3173
+    },
+    {
+      "date": "2026-02-14",
+      "records": 11956,
+      "runtime_minutes": 51.1089
+    },
+    {
+      "date": "2026-02-15",
+      "records": 7305,
+      "runtime_minutes": 39.6735
+    },
+    {
+      "date": "2026-02-16",
+      "records": 37375,
+      "runtime_minutes": 117.2346
+    },
+    {
+      "date": "2026-02-17",
+      "records": 35072,
+      "runtime_minutes": 106.4849
+    },
+    {
+      "date": "2026-02-18",
+      "records": 32997,
+      "runtime_minutes": 97.1695
+    },
+    {
+      "date": "2026-02-19",
+      "records": 34113,
+      "runtime_minutes": 112.6657
+    },
+    {
+      "date": "2026-02-20",
+      "records": 37493,
+      "runtime_minutes": 117.8693
+    },
+    {
+      "date": "2026-02-21",
+      "records": 11229,
+      "runtime_minutes": 44.2602
+    },
+    {
+      "date": "2026-02-22",
+      "records": 8634,
+      "runtime_minutes": 35.3216
+    },
+    {
+      "date": "2026-02-23",
+      "records": 35542,
+      "runtime_minutes": 107.0188
+    },
+    {
+      "date": "2026-02-24",
+      "records": 26302,
+      "runtime_minutes": 83.7315
+    },
+    {
+      "date": "2026-02-25",
+      "records": 29708,
+      "runtime_minutes": 95.3412
+    },
+    {
+      "date": "2026-02-26",
+      "records": 32265,
+      "runtime_minutes": 96.2206
+    },
+    {
+      "date": "2026-02-27",
+      "records": 39799,
+      "runtime_minutes": 135.7687
+    },
+    {
+      "date": "2026-02-28",
+      "records": 12207,
+      "runtime_minutes": 42.8515
+    },
+    {
+      "date": "2026-03-01",
+      "records": 8977,
+      "runtime_minutes": 37.1329
+    },
+    {
+      "date": "2026-03-02",
+      "records": 32691,
+      "runtime_minutes": 110.7507
+    },
+    {
+      "date": "2026-03-03",
+      "records": 27290,
+      "runtime_minutes": 90.39
+    },
+    {
+      "date": "2026-03-04",
+      "records": 34446,
+      "runtime_minutes": 100.9893
+    },
+    {
+      "date": "2026-03-05",
+      "records": 29933,
+      "runtime_minutes": 87.4829
+    },
+    {
+      "date": "2026-03-06",
+      "records": 38716,
+      "runtime_minutes": 125.0568
+    },
+    {
+      "date": "2026-03-07",
+      "records": 13470,
+      "runtime_minutes": 51.5882
+    },
+    {
+      "date": "2026-03-08",
+      "records": 10992,
+      "runtime_minutes": 45.6189
+    },
+    {
+      "date": "2026-03-09",
+      "records": 38643,
+      "runtime_minutes": 125.4796
+    },
+    {
+      "date": "2026-03-10",
+      "records": 32204,
+      "runtime_minutes": 93.3637
+    },
+    {
+      "date": "2026-03-11",
+      "records": 23283,
+      "runtime_minutes": 81.897
+    },
+    {
+      "date": "2026-03-12",
+      "records": 31058,
+      "runtime_minutes": 97.4517
+    },
+    {
+      "date": "2026-03-13",
+      "records": 39461,
+      "runtime_minutes": 132.6368
+    },
+    {
+      "date": "2026-03-14",
+      "records": 14397,
+      "runtime_minutes": 53.1099
+    },
+    {
+      "date": "2026-03-15",
+      "records": 8241,
+      "runtime_minutes": 36.4844
+    },
+    {
+      "date": "2026-03-16",
+      "records": 39672,
+      "runtime_minutes": 123.8726
+    },
+    {
+      "date": "2026-03-17",
+      "records": 25700,
+      "runtime_minutes": 82.7126
+    },
+    {
+      "date": "2026-03-18",
+      "records": 25979,
+      "runtime_minutes": 78.6653
+    },
+    {
+      "date": "2026-03-19",
+      "records": 32780,
+      "runtime_minutes": 95.9393
+    },
+    {
+      "date": "2026-03-20",
+      "records": 35981,
+      "runtime_minutes": 108.4547
+    },
+    {
+      "date": "2026-03-21",
+      "records": 14751,
+      "runtime_minutes": 57.8067
+    },
+    {
+      "date": "2026-03-22",
+      "records": 7810,
+      "runtime_minutes": 32.8429
+    },
+    {
+      "date": "2026-03-23",
+      "records": 30020,
+      "runtime_minutes": 87.3129
+    },
+    {
+      "date": "2026-03-24",
+      "records": 27214,
+      "runtime_minutes": 88.5944
+    },
+    {
+      "date": "2026-03-25",
+      "records": 23923,
+      "runtime_minutes": 80.825
+    },
+    {
+      "date": "2026-03-26",
+      "records": 25337,
+      "runtime_minutes": 77.5068
+    },
+    {
+      "date": "2026-03-27",
+      "records": 37363,
+      "runtime_minutes": 122.0757
+    },
+    {
+      "date": "2026-03-28",
+      "records": 12026,
+      "runtime_minutes": 46.8985
+    },
+    {
+      "date": "2026-03-29",
+      "records": 8223,
+      "runtime_minutes": 39.7627
+    },
+    {
+      "date": "2026-03-30",
+      "records": 29186,
+      "runtime_minutes": 85.9212
+    },
+    {
+      "date": "2026-03-31",
+      "records": 33347,
+      "runtime_minutes": 104.6991
+    },
+    {
+      "date": "2026-04-01",
+      "records": 25813,
+      "runtime_minutes": 87.3455
+    },
+    {
+      "date": "2026-04-02",
+      "records": 34012,
+      "runtime_minutes": 105.5783
+    },
+    {
+      "date": "2026-04-03",
+      "records": 33546,
+      "runtime_minutes": 104.0984
+    },
+    {
+      "date": "2026-04-04",
+      "records": 10597,
+      "runtime_minutes": 29.4034
+    },
+    {
+      "date": "2026-04-05",
+      "records": 7622,
+      "runtime_minutes": 38.0975
+    },
+    {
+      "date": "2026-04-06",
+      "records": 35618,
+      "runtime_minutes": 108.7437
+    },
+    {
+      "date": "2026-04-07",
+      "records": 29031,
+      "runtime_minutes": 89.9893
+    },
+    {
+      "date": "2026-04-08",
+      "records": 25721,
+      "runtime_minutes": 79.7802
+    },
+    {
+      "date": "2026-04-09",
+      "records": 25908,
+      "runtime_minutes": 82.9915
+    },
+    {
+      "date": "2026-04-10",
+      "records": 31235,
+      "runtime_minutes": 97.736
+    },
+    {
+      "date": "2026-04-11",
+      "records": 13097,
+      "runtime_minutes": 49.6873
+    },
+    {
+      "date": "2026-04-12",
+      "records": 9304,
+      "runtime_minutes": 39.4067
+    },
+    {
+      "date": "2026-04-13",
+      "records": 32577,
+      "runtime_minutes": 104.3615
+    },
+    {
+      "date": "2026-04-14",
+      "records": 26668,
+      "runtime_minutes": 80.2485
+    },
+    {
+      "date": "2026-04-15",
+      "records": 30948,
+      "runtime_minutes": 99.4906
+    },
+    {
+      "date": "2026-04-16",
+      "records": 27162,
+      "runtime_minutes": 86.6122
+    },
+    {
+      "date": "2026-04-17",
+      "records": 34547,
+      "runtime_minutes": 101.1503
+    },
+    {
+      "date": "2026-04-18",
+      "records": 14281,
+      "runtime_minutes": 52.5426
+    },
+    {
+      "date": "2026-04-19",
+      "records": 7719,
+      "runtime_minutes": 33.6175
+    },
+    {
+      "date": "2026-04-20",
+      "records": 35303,
+      "runtime_minutes": 109.751
+    },
+    {
+      "date": "2026-04-21",
+      "records": 28804,
+      "runtime_minutes": 91.4016
+    },
+    {
+      "date": "2026-04-22",
+      "records": 29422,
+      "runtime_minutes": 89.3278
+    },
+    {
+      "date": "2026-04-23",
+      "records": 31150,
+      "runtime_minutes": 91.4661
+    },
+    {
+      "date": "2026-04-24",
+      "records": 38258,
+      "runtime_minutes": 127.032
+    },
+    {
+      "date": "2026-04-25",
+      "records": 14730,
+      "runtime_minutes": 58.6545
+    },
+    {
+      "date": "2026-04-26",
+      "records": 9011,
+      "runtime_minutes": 40.0722
+    },
+    {
+      "date": "2026-04-27",
+      "records": 39110,
+      "runtime_minutes": 133.3586
+    },
+    {
+      "date": "2026-04-28",
+      "records": 32605,
+      "runtime_minutes": 98.0084
+    },
+    {
+      "date": "2026-04-29",
+      "records": 31376,
+      "runtime_minutes": 96.7103
+    },
+    {
+      "date": "2026-04-30",
+      "records": 34768,
+      "runtime_minutes": 103.7549
+    },
+    {
+      "date": "2026-05-01",
+      "records": 40032,
+      "runtime_minutes": 139.336
+    },
+    {
+      "date": "2026-05-02",
+      "records": 14357,
+      "runtime_minutes": 47.8534
+    },
+    {
+      "date": "2026-05-03",
+      "records": 8996,
+      "runtime_minutes": 43.0668
+    },
+    {
+      "date": "2026-05-04",
+      "records": 28929,
+      "runtime_minutes": 89.4028
+    },
+    {
+      "date": "2026-05-05",
+      "records": 29129,
+      "runtime_minutes": 92.2569
+    },
+    {
+      "date": "2026-05-06",
+      "records": 25905,
+      "runtime_minutes": 81.4013
+    },
+    {
+      "date": "2026-05-07",
+      "records": 26044,
+      "runtime_minutes": 84.3914
+    },
+    {
+      "date": "2026-05-08",
+      "records": 36951,
+      "runtime_minutes": 112.8411
+    },
+    {
+      "date": "2026-05-09",
+      "records": 11470,
+      "runtime_minutes": 51.4316
+    },
+    {
+      "date": "2026-05-10",
+      "records": 7014,
+      "runtime_minutes": 28.7208
+    },
+    {
+      "date": "2026-05-11",
+      "records": 28948,
+      "runtime_minutes": 86.213
+    },
+    {
+      "date": "2026-05-12",
+      "records": 29245,
+      "runtime_minutes": 92.0552
+    },
+    {
+      "date": "2026-05-13",
+      "records": 27952,
+      "runtime_minutes": 93.7314
+    },
+    {
+      "date": "2026-05-14",
+      "records": 33312,
+      "runtime_minutes": 102.3925
+    },
+    {
+      "date": "2026-05-15",
+      "records": 35046,
+      "runtime_minutes": 104.7141
+    },
+    {
+      "date": "2026-05-16",
+      "records": 12718,
+      "runtime_minutes": 44.0946
+    },
+    {
+      "date": "2026-05-17",
+      "records": 8366,
+      "runtime_minutes": 38.1499
+    },
+    {
+      "date": "2026-05-18",
+      "records": 35598,
+      "runtime_minutes": 108.6492
+    },
+    {
+      "date": "2026-05-19",
+      "records": 21792,
+      "runtime_minutes": 79.2423
+    },
+    {
+      "date": "2026-05-20",
+      "records": 30209,
+      "runtime_minutes": 96.011
+    },
+    {
+      "date": "2026-05-21",
+      "records": 29860,
+      "runtime_minutes": 86.5336
+    },
+    {
+      "date": "2026-05-22",
+      "records": 36563,
+      "runtime_minutes": 122.7483
+    },
+    {
+      "date": "2026-05-23",
+      "records": 11853,
+      "runtime_minutes": 46.0525
+    },
+    {
+      "date": "2026-05-24",
+      "records": 7609,
+      "runtime_minutes": 33.5047
+    },
+    {
+      "date": "2026-05-25",
+      "records": 32966,
+      "runtime_minutes": 106.3143
+    },
+    {
+      "date": "2026-05-26",
+      "records": 27360,
+      "runtime_minutes": 86.201
+    },
+    {
+      "date": "2026-05-27",
+      "records": 22302,
+      "runtime_minutes": 72.2854
+    },
+    {
+      "date": "2026-05-28",
+      "records": 29169,
+      "runtime_minutes": 91.7976
+    },
+    {
+      "date": "2026-05-29",
+      "records": 32976,
+      "runtime_minutes": 103.8196
+    },
+    {
+      "date": "2026-05-30",
+      "records": 13678,
+      "runtime_minutes": 56.1683
+    },
+    {
+      "date": "2026-05-31",
+      "records": 7991,
+      "runtime_minutes": 32.4767
+    },
+    {
+      "date": "2026-06-01",
+      "records": 33184,
+      "runtime_minutes": 108.9539
+    },
+    {
+      "date": "2026-06-02",
+      "records": 27065,
+      "runtime_minutes": 89.4499
+    },
+    {
+      "date": "2026-06-03",
+      "records": 26827,
+      "runtime_minutes": 83.5507
+    },
+    {
+      "date": "2026-06-04",
+      "records": 30561,
+      "runtime_minutes": 91.1279
+    },
+    {
+      "date": "2026-06-05",
+      "records": 31871,
+      "runtime_minutes": 93.8015
+    },
+    {
+      "date": "2026-06-06",
+      "records": 13707,
+      "runtime_minutes": 52.761
+    },
+    {
+      "date": "2026-06-07",
+      "records": 9180,
+      "runtime_minutes": 38.3579
+    },
+    {
+      "date": "2026-06-08",
+      "records": 30218,
+      "runtime_minutes": 90.4855
+    },
+    {
+      "date": "2026-06-09",
+      "records": 24127,
+      "runtime_minutes": 81.5625
+    },
+    {
+      "date": "2026-06-10",
+      "records": 30514,
+      "runtime_minutes": 95.7433
+    },
+    {
+      "date": "2026-06-11",
+      "records": 30451,
+      "runtime_minutes": 92.5492
+    },
+    {
+      "date": "2026-06-12",
+      "records": 35630,
+      "runtime_minutes": 111.8528
+    },
+    {
+      "date": "2026-06-13",
+      "records": 13543,
+      "runtime_minutes": 57.327
+    },
+    {
+      "date": "2026-06-14",
+      "records": 11319,
+      "runtime_minutes": 41.9195
+    },
+    {
+      "date": "2026-06-15",
+      "records": 33985,
+      "runtime_minutes": 100.5493
+    },
+    {
+      "date": "2026-06-16",
+      "records": 30738,
+      "runtime_minutes": 98.6155
+    },
+    {
+      "date": "2026-06-17",
+      "records": 25179,
+      "runtime_minutes": 83.8233
+    },
+    {
+      "date": "2026-06-18",
+      "records": 36565,
+      "runtime_minutes": 115.5607
+    },
+    {
+      "date": "2026-06-19",
+      "records": 40689,
+      "runtime_minutes": 147.4954
+    },
+    {
+      "date": "2026-06-20",
+      "records": 14826,
+      "runtime_minutes": 50.7122
+    },
+    {
+      "date": "2026-06-21",
+      "records": 9149,
+      "runtime_minutes": 34.9559
+    },
+    {
+      "date": "2026-06-22",
+      "records": 36644,
+      "runtime_minutes": 111.6908
+    },
+    {
+      "date": "2026-06-23",
+      "records": 30824,
+      "runtime_minutes": 95.5502
+    },
+    {
+      "date": "2026-06-24",
+      "records": 29933,
+      "runtime_minutes": 89.6482
+    },
+    {
+      "date": "2026-06-25",
+      "records": 29785,
+      "runtime_minutes": 90.5136
+    },
+    {
+      "date": "2026-06-26",
+      "records": 31244,
+      "runtime_minutes": 92.21
+    },
+    {
+      "date": "2026-06-27",
+      "records": 13722,
+      "runtime_minutes": 49.8233
+    },
+    {
+      "date": "2026-06-28",
+      "records": 6555,
+      "runtime_minutes": 30.3684
+    },
+    {
+      "date": "2026-06-29",
+      "records": 31609,
+      "runtime_minutes": 98.4924
+    }
+  ],
+  "limitations": [
+    "合成データによる評価です。実業務データでの精度・有効性は未検証です。",
+    "未来の処理件数も予測するため、件数と所要時間の両方の誤差を含みます。",
+    "再帰予測は長い期間ほど誤差が積み重なる場合があります。突発増加は事前情報なしでは予見できません。",
+    "倍率比較は仮定の変更です。統計的予測区間や資源増設の効果ではありません。",
+    "暦日単位です。祝日、ジョブ依存、並列実行、24時間を超える処理の重なり・待ち行列は未考慮です。",
+    "監査foldは日付が重なります。独立した試行数や実運用の精度保証として扱えません。",
+    "7日先誤差で手法を選択します。30日先で最良の手法を選ぶ保証はありません。"
+  ],
+  "model_label": "直近4週の同曜日平均（基準）",
+  "observations": 180,
+  "overview": {
+    "late_days": 0,
+    "latest_start_at": "2026-07-03T21:53:39+09:00",
+    "min_slack_minutes": 8.65,
+    "tight_days": 1,
+    "worst_date": "2026-07-03"
+  },
+  "scenarios": [
+    {
+      "label": "所要時間 80%",
+      "late_days": 0,
+      "latest_start_at": "2026-07-03T22:15:55+09:00",
+      "min_slack_minutes": 30.916666666666668,
+      "multiplier": 0.8,
+      "tight_days": 0,
+      "worst_date": "2026-07-03"
+    },
+    {
+      "label": "所要時間 100%",
+      "late_days": 0,
+      "latest_start_at": "2026-07-03T21:53:39+09:00",
+      "min_slack_minutes": 8.65,
+      "multiplier": 1,
+      "tight_days": 1,
+      "worst_date": "2026-07-03"
+    },
+    {
+      "label": "所要時間 120%",
+      "late_days": 2,
+      "latest_start_at": "2026-07-03T21:31:23+09:00",
+      "min_slack_minutes": -13.616666666666667,
+      "multiplier": 1.2,
+      "tight_days": 3,
+      "worst_date": "2026-07-03"
+    }
+  ],
+  "selected_model": "weekday4",
+  "settings": {
+    "buffer_minutes": 15,
+    "deadline_time": "00:00",
+    "horizon": 7,
+    "start_time": "22:00",
+    "stress_pct": 120
+  },
+  "source": "合成データ：曜日差（seed 0）",
+  "summary": {
+    "headline": "7日間の予測：締切超過 0日、安全余裕不足 1日",
+    "items": [
+      {
+        "label": "入力",
+        "value": "合成データ：曜日差（seed 0） / 180日"
+      },
+      {
+        "label": "観測最終日",
+        "value": "2026-06-29"
+      },
+      {
+        "label": "予測手法",
+        "value": "直近4週の同曜日平均（基準）"
+      },
+      {
+        "label": "予測期間",
+        "value": "2026-06-30 〜 2026-07-06"
+      },
+      {
+        "label": "締切超過見込み",
+        "value": "0日"
+      },
+      {
+        "label": "安全余裕不足",
+        "value": "1日"
+      },
+      {
+        "label": "最も余裕が少ない業務日",
+        "value": "2026-07-03"
+      },
+      {
+        "label": "同日の最終着手日時",
+        "value": "2026-07-03T21:53:39+09:00"
+      },
+      {
+        "label": "設定",
+        "value": "開始 22:00 / 締切 00:00 / 安全余裕 15分（日本時間）"
+      }
+    ],
+    "text": "バッチ処理計画サマリ\n7日間の予測：締切超過 0日、安全余裕不足 1日\n\n入力：合成データ：曜日差（seed 0） / 180日\n観測最終日：2026-06-29\n予測手法：直近4週の同曜日平均（基準）\n予測期間：2026-06-30 〜 2026-07-06\n締切超過見込み：0日\n安全余裕不足：1日\n最も余裕が少ない業務日：2026-07-03\n同日の最終着手日時：2026-07-03T21:53:39+09:00\n設定：開始 22:00 / 締切 00:00 / 安全余裕 15分（日本時間）\n\n評価・限界\n合成データによる評価です。実業務データでの精度・有効性は未検証です。\n未来の処理件数も予測するため、件数と所要時間の両方の誤差を含みます。\n再帰予測は長い期間ほど誤差が積み重なる場合があります。突発増加は事前情報なしでは予見できません。\n倍率比較は仮定の変更です。統計的予測区間や資源増設の効果ではありません。\n暦日単位です。祝日、ジョブ依存、並列実行、24時間を超える処理の重なり・待ち行列は未考慮です。\n監査foldは日付が重なります。独立した試行数や実運用の精度保証として扱えません。\n7日先誤差で手法を選択します。30日先で最良の手法を選ぶ保証はありません。"
+  }
+}
