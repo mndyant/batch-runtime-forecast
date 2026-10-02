@@ -1,0 +1,38 @@
+﻿指定された全ファイルを読み終えました。レビュー結果を観点別にまとめます。先に結論を言うと、**リーク・公平性・凍結/上書き防止・締切セマンティクスについて明確な欠陥は見つかりませんでした**。設計がテストで裏付けられており、手計算でいくつかの数式（完了時刻誤差の符号、締切混同行列、開発/監査起点の境界値）を検証しましたが、いずれも仕様と一致していました。以下、確認した内容と、見つかった軽微な欠陥・改善提案を分けて記載します。
+
+## リーク対策（forecasting/models.py, evaluation/backtest.py）
+
+- `predict_at`（evaluation/backtest.py:21-23）は `history.loc[:,COLUMNS].iloc[:origin]` のみをモデルに渡し、`predict`（forecasting/models.py:52-53）は列が `COLUMNS` 以外にあると拒否する。`tests/test_evaluation.py` の `test_future_mutation_and_row_append_cannot_change_same_origin_fit` / `test_selection_is_invariant_after_fixed_development_end` で未来行の改変・追加に対する不変性が検証されており、再帰入力（models.py:81-84）も予測値のみを追加している。学習末日と採点初日の前後関係も、`read_csv` の連続日付チェック（data.py:36-37）とスライス方式により構造的に保証されている。欠陥なし。
+- `evaluation/benchmark.py:106-116`：全モデルの予測を確定してから `truth` を開く順序になっており、コメント通り評価器→予測器への正解漏洩経路はない。
+
+## 公平性（候補間比較）
+
+- 3手法とも同一の起点・観測・締切設定で `metrics()` に通される（backtest.py:21-23, 82-91）。選択基準は開発7日MAEのみでホライズン30を使わない（backtest.py:58-72）。学習窓の違い（ridgeのみ直近120日）は仕様9章で事前固定された設計であり、不公平ではなく意図的な差。欠陥なし。
+
+## ホールドアウト凍結・結果上書き（evaluation/benchmark.py）
+
+- `freeze()`（L41-50）は既存マニフェストがあれば例外、`run()`（L93-141）は `run-lock.json` を `'x'`（排他作成）で作ることで同一stageの再実行を事前に防止し、`report.json`等のdump前に失敗する。`verify()`はファイル内容と対象ファイル集合の両方を比較し、`frozen_files()` には `data/demo` 配下の truth CSVも含まれるため、正解データ自体の改ざん防止も効いている。欠陥なし。
+
+## 締切セマンティクス（forecasting/planning.py）
+
+- `deadline<=start` で+1日、`status` の境界（`slack<0`→late, `0<=slack<buffer`→tight）は仕様9章の記述と一致し、`tests/test_core.py` の境界値テスト（duration=120, 120.001等）とも整合。完了時刻誤差・最終着手誤差の符号も手計算で検証済み（backtest.py:45-46、仕様94行目と一致）。欠陥なし。
+
+## 入力正当性（forecasting/data.py）
+
+- 列順・日付形式・重複・欠損日・非数値・負値・件数の整数制約・「件数>0かつ所要時間0」拒否など仕様17-19行目の要件を満たしている。境界（最小点数未満で単一行になるケース）は長さチェックが欠損日チェックより先にあるため到達不可。
+
+**軽微な欠陥（最小修正案あり）**
+`forecasting/models.py:40-44` の `apply_ridge` は下限0のみクランプし、上限が無い。入力側の `runtime_minutes` は10080分、`records` は1e9件で上限を切っている（data.py:25）のに、リッジの**出力**（予測件数・予測所要時間）には対応する上限がない。極端な上昇トレンドの有効な入力（拒否されない範囲）を30日再帰すると、現実的でない巨大値を返す可能性があり、`planning.daily_plan` の `timedelta(seconds=...)` で `OverflowError` になるか、あるいはオーバーフローしない範囲でも「所要時間が数万分」のような無意味な計画をそのまま画面に出してしまう。
+最小修正案：`apply_ridge` 戻り値、または `predict()` の出力に対して `min(value, 1e9)` / `min(value, 10080)` のように入力側と同じ上限でクランプする一文を追加する（モデル自体の再設計は不要）。
+
+## API障害（app/__init__.py）
+
+- 外部API呼び出しは一切なく（grep確認済み）、仕様10行目「APIキー・LLM接続不要」と一致。ローカルHTTPエンドポイントのエラー処理は、`ValueError`/`OverflowError`、`RequestEntityTooLarge`（2MB超）、`/api/sample/<key>` の404、パス traversal 相当のサンプルキー検証まで一貫してカバーされており、`tests/test_api.py` で確認されている。欠陥なし。
+
+**任意の改善提案（対応不要・優先度低）**
+1. `app/__init__.py:104` の `except (ValueError,OverflowError)` 以外（将来のコード変更で混入する`KeyError`等）は未捕捉のままFlaskの既定500に落ちる。ローカル専用アプリなら必須ではないが、`except Exception` のフォールバックで汎用400を返すと堅牢性が上がる。
+2. `evaluation/backtest.py:58-61` の `select_model` は `origins(end+60)` を呼んだ**後**に `end>len(history)` をチェックしている。現状どのパスでも誤った結果にはならないが（例外は`for`ループ前に発生）、可読性のためチェックを先に移動するとよい。
+3. `scripts/generate_demo.py:15` の乱数ストリームは `list(SCENARIOS).index(scenario)` という辞書の挿入順に依存している。現状は一貫しているが、将来`SCENARIOS`の記述順を変えると既存データの再現性が静かに崩れる。シナリオ名自体をシードに使う（例：ハッシュ化）方が将来の事故を防げる。
+4. `evaluation/benchmark.py:124` の `except Exception` は仕様の「失敗数」記録として意図的だが、例外の型名のみを記録しており、デバッグ時はスタックトレースも残した方が調査しやすい（最終採点のやり直し判断に影響しないが運用上便利）。
+
+以上、再帰予測の仕組み自体は変更不要という前提のもと、確認できた唯一の具体的な修正候補は `apply_ridge` の出力上限クランプです。他は任意の堅牢性向上案です。
