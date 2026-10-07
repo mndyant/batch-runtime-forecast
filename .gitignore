@@ -4,3 +4,11 @@ __pycache__/
 *.log
 .env
 .tmp-demo/
+
+# Local credentials and user-provided datasets
+.env.*
+!.env.example
+*.pem
+*.key
+data/custom/
+data/private/

@@ -22,7 +22,15 @@ def main():
     for case in saved:
         name=case['case']
         observed=read_csv((ROOT/'data/demo/observed'/f'{name}.csv').read_bytes())
-        assert select_model(observed)==case['selection'],f'{name}: selection'
+        selection=select_model(observed)
+        expected_selection=case['selection']
+        assert selection.keys()==expected_selection.keys(),f'{name}: selection fields'
+        for key in ['selected_model','development_end','origins']:
+            assert selection[key]==expected_selection[key],f'{name}: {key}'
+        assert selection['scores'].keys()==expected_selection['scores'].keys()
+        for model,value in selection['scores'].items():
+            assert math.isclose(value,expected_selection['scores'][model],
+                                rel_tol=1e-9,abs_tol=1e-8),(name,model,'selection score')
         forecasts={model:predict(observed,30,model) for model in manifest['protocol']['models']}
         for model,result in forecasts.items():
             expected=case['predictions'][model]['forecast']

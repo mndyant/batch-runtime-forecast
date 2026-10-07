@@ -1,0 +1,11 @@
+title = "Forecast portfolio secret scan"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Verified SHA-256 of tests/test_api.py in the frozen evaluation manifest"
+condition = "AND"
+regexTarget = "line"
+paths = ['''^docs/evaluation/frozen-manifest\.json$''']
+regexes = ['''^\s+"tests/test_api\.py": "c3fa8b8a9b76c30697fa2effe29c1a3616eca27d5d948542e6342d25a04161be",?\s*$''']

@@ -1,0 +1,29 @@
+{
+  "repository": "batch-runtime-forecast-portfolio-audit",
+  "checks": [
+    {
+      "width": 1280,
+      "api_status": 200,
+      "forecast_rows": 7,
+      "summary_matches_api": true,
+      "txt_matches_api": true,
+      "no_page_overflow": true
+    },
+    {
+      "width": 390,
+      "api_status": 200,
+      "forecast_rows": 7,
+      "summary_matches_api": true,
+      "txt_matches_api": true,
+      "no_page_overflow": true
+    },
+    {
+      "stale_export_disabled": true
+    },
+    {
+      "truth_not_served": true
+    }
+  ],
+  "page_errors": [],
+  "passed": true
+}
