@@ -6,12 +6,29 @@
 
 ![PC画面](docs/screenshots/desktop-weekday.png)
 
+## この作品で確認できること
+
+業務上の期限を、入力検証 → 予測 → 過去の実績との比較 → 計画 → 画面・ファイル出力まで実装したポートフォリオです。Python / Flask / NumPy / pandas と、HTML / CSS / JavaScript / SVGを使用しています。
+
+| 観点 | 実装・根拠 |
+|---|---|
+| 業務課題の整理 | 予測値を、対応を始める期限や日付付きの計画へ変換 |
+| APIと入力品質 | CSVの欠損・重複・不正値・サイズ上限を検証し、日本語でエラー表示 |
+| 評価の設計 | 時系列で開発・監査・最終採点を分離し、単純な比較基準と全候補を同条件で採点 |
+| 再現性 | 固定seed、凍結ハッシュ、全ケースのJSON/CSV、再現手順を公開 |
+| 利用画面 | PC・390px幅の画面、グラフ、TXT/CSV/JSON出力、古い結果の保存防止 |
+
+7日間の所要時間MAEは **23.45分 → 18.84分（19.7%改善）**。一方で締切超過190件中48件を見逃し、64件の誤警報が残りました。突発増加では基準より4.7%悪化し、最悪ケースのMAEは104.43分です。**合成データの条件内の結果であり、実運用の検知性能は未検証です。**
+
+[評価結果](docs/evaluation.md) / [公開内容の点検](docs/publication-review.md) / [素材・依存の由来](docs/provenance.md)
+
 ## 起動
 
-Python 3.14で動作確認済み。PowerShellで実行します。
+Python 3.14.3で動作確認済み。PowerShellで実行します。
 
 ```powershell
-cd C:\Users\morim\dev\batch-runtime-forecast
+git clone https://github.com/mndyant/batch-runtime-forecast.git
+cd batch-runtime-forecast
 python -m venv .venv
 .\.venv\Scripts\python -m pip install -r requirements.txt
 .\.venv\Scripts\python run.py
@@ -108,3 +125,15 @@ date,records,runtime_minutes
 初版は1ジョブ・暦日を対象とし、祝日、依存ジョブ、並列実行、処理の重なり、待ち行列、実際の設備効果を扱いません。再帰予測の累積誤差、突発イベント、生成器への依存が残ります。実業務に進む際は匿名化した実績で期間を分け、見逃しのコストと許容誤差を定義して検証する必要があります。為替予測とLLM接続は含めません。
 
 開発ではClaude Opusで仕様レビュー、Claude Sonnetでコードレビュー、GPT-6.1でUI・監査テストを分担しました。[判断記録](docs/design-decisions.md)に採否を残しています。アプリ自体にこれらのモデルへの接続はありません。
+
+## 関連作品と開発でのAI利用
+
+[capacity-forecast](https://github.com/mndyant/capacity-forecast)は蓄積する使用量から容量不足日を予測する作品です。本作は日次の処理件数と所要時間から締切超過を予測し、日跨ぎや休止日を扱います。共通する評価方針を、異なる入力・制約・業務判断へ適用しています。
+
+## 公開と利用条件
+
+採用選考・学習時の閲覧と動作確認を目的に公開しています。**再利用ライセンスの付与は保留**しており、MIT等のオープンソースライセンスは付与していません。[利用条件](RIGHTS.md)と[素材・依存の由来](docs/provenance.md)を参照してください。
+
+同梱CSVは生成スクリプトによる合成データです。通常の予測経路は観測CSVだけを使い、評価用の未来の正解を予測入力に渡しません。取込CSVはローカル起動時には自分のPCのサーバーへ送信され、アプリはファイルやDBへ保存しません。出力JSONには入力履歴を含むため、共有する場合は内容を確認してください。
+
+実業務・顧客・組織の非公開データを公開デモへ入力しないでください。実運用には実データでの外部検証、認証、アクセス制御、負荷制限、監視などを別途設計する必要があります。
